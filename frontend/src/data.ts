@@ -1,4 +1,5 @@
-import {Food} from "./app/shared/models/foods";
+import {Food} from "./app/shared/models/Food";
+import { Tag } from "./app/shared/models/Tag";
 
 export const sampleFoods:Food[] = [{
     id: "1",
@@ -62,4 +63,15 @@ export const sampleFoods:Food[] = [{
     origins: ["Japan"],
     cookingTime: 30,
 }
+]
+
+export const sampleTags:Tag[]= [
+    { name: 'All', count: 6 },
+    { name: 'FastFood', count: 4 },
+    { name: 'Pizza', count: 2 },
+    { name: 'Lunch', count: 3 },
+    { name: 'SlowFood', count: 2 },
+    { name: 'Hamburger', count: 1 },
+    { name: 'Fry', count: 1 },
+    { name: 'Soup', count: 1 }
 ]
