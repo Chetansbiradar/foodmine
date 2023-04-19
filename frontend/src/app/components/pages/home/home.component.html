@@ -1,6 +1,10 @@
 <app-search></app-search>
 <app-tags></app-tags>
-<ul *ngIf="foods.length; else noFoodItems">
+<app-not-found [visible]="!foods || !foods.length"
+resetLinkRoute=""
+resetLinkText="Reset Search"
+notFoundMessage="No Items Found"></app-not-found>
+<ul>
     <li *ngFor="let food of foods">
         <a routerLink="/food/{{food.id}}">
             <img [src]="food.imageUrl" [alt]="food.name">
@@ -19,6 +23,3 @@
         </a>
     </li>
 </ul>
-<ng-template #noFoodItems>
-<p style="text-align: center;">No food items found</p>
-</ng-template>
