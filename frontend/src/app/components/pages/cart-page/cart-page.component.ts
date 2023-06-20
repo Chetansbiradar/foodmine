@@ -11,7 +11,15 @@ import { CartItem } from 'src/app/shared/models/CartItem';
 export class CartPageComponent {
 cart!:Cart;
 constructor(private cartService: CartService) {
-  this.cartService.getCartObservable().subscribe(cart=>this.cart=cart);
+  this.cartService.getCartObservable().subscribe({
+    next: (cart: Cart) =>{
+      this.cart=cart
+    },
+    error: (error: string)=>{
+      console.log(error);
+      // insert code for what to do on failure like  `this.cart = null`
+    }
+  });
  }  
 
  removeItemFromCart(cartItem:CartItem){
